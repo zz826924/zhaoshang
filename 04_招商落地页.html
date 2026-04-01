@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹幕游戏无人直播 · 招商合作</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #0a0a1a;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 60px 0 40px;
+            background: linear-gradient(180deg, #0d0d2b 0%, #0a0a1a 100%);
+        }
+        .hero .badge {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            color: #a78bfa;
+            font-size: 12px;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        .hero h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        .hero h1 span {
+            color: #a78bfa;
+        }
+        .hero .subtitle {
+            font-size: 16px;
+            color: #8888aa;
+            margin-bottom: 28px;
+        }
+        .hero .highlight-box {
+            background: linear-gradient(135deg, #1a1a3e, #2d1b69);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 28px;
+        }
+        .hero .highlight-box .number {
+            font-size: 36px;
+            font-weight: 800;
+            color: #a78bfa;
+            margin-bottom: 4px;
+        }
+        .hero .highlight-box .label {
+            font-size: 13px;
+            color: #8888aa;
+        }
+        .hero .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #7c3aed, #5b21b6);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 14px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+        }
+        .hero .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(124, 58, 237, 0.5);
+        }
+        .hero .cta-note {
+            font-size: 12px;
+            color: #555;
+            margin-top: 12px;
+        }
+
+        /* Section common */
+        .section {
+            padding: 40px 0;
+            border-bottom: 1px solid #1a1a2e;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title .icon {
+            font-size: 22px;
+        }
+
+        /* 什么是弹幕游戏 */
+        .intro-card {
+            background: #111127;
+            border: 1px solid #1e1e3f;
+            border-radius: 16px;
+            padding: 24px;
+        }
+        .intro-card p {
+            font-size: 15px;
+            color: #9999bb;
+            margin-bottom: 16px;
+        }
+        .intro-card p:last-child { margin-bottom: 0; }
+        .intro-card strong { color: #c4b5fd; }
+
+        /* 核心卖点 */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .feature-item {
+            background: #111127;
+            border: 1px solid #1e1e3f;
+            border-radius: 12px;
+            padding: 18px 16px;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+        .feature-item:hover {
+            border-color: rgba(139, 92, 246, 0.4);
+        }
+        .feature-item .f-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        .feature-item .f-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #e0e0e0;
+            margin-bottom: 4px;
+        }
+        .feature-item .f-desc {
+            font-size: 12px;
+            color: #6666880;
+        }
+
+        /* 目标人群 */
+        .crowd-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .crowd-list li {
+            background: #111127;
+            border: 1px solid #1e1e3f;
+            border-radius: 12px;
+            padding: 14px 18px;
+            font-size: 14px;
+            color: #9999bb;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .crowd-list li .check {
+            color: #a78bfa;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        /* 收益参考 */
+        .profit-section {
+            background: #0d0d2b;
+            border-radius: 16px;
+            padding: 28px 24px;
+            text-align: center;
+        }
+        .profit-section .profit-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+        .profit-section .profit-sub {
+            font-size: 13px;
+            color: #666688;
+            margin-bottom: 24px;
+        }
+        .profit-range {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .profit-range .num {
+            font-size: 42px;
+            font-weight: 800;
+            color: #a78bfa;
+        }
+        .profit-range .unit {
+            font-size: 16px;
+            color: #8888aa;
+        }
+        .profit-range .divider {
+            font-size: 28px;
+            color: #444466;
+        }
+        .profit-section .profit-note {
+            font-size: 12px;
+            color: #444466;
+            margin-bottom: 20px;
+        }
+        .profit-section .profit-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .profit-tag {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            color: #a78bfa;
+            font-size: 12px;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        /* 合伙人等级 */
+        .plans {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .plan-card {
+            background: #111127;
+            border: 1px solid #1e1e3f;
+            border-radius: 16px;
+            padding: 22px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .plan-card.popular {
+            border-color: rgba(139, 92, 246, 0.5);
+            background: linear-gradient(135deg, #0f0f2a, #1a1040);
+        }
+        .plan-card.popular::before {
+            content: '推荐';
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: linear-gradient(135deg, #7c3aed, #5b21b6);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 10px;
+        }
+        .plan-card .plan-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        .plan-card .plan-price {
+            font-size: 28px;
+            font-weight: 800;
+            color: #a78bfa;
+            margin-bottom: 16px;
+        }
+        .plan-card .plan-price span {
+            font-size: 14px;
+            font-weight: 400;
+            color: #666688;
+        }
+        .plan-card .plan-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .plan-card .plan-features li {
+            font-size: 13px;
+            color: #8888aa;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .plan-card .plan-features li::before {
+            content: '✓';
+            color: #a78bfa;
+            font-weight: 700;
+        }
+
+        /* FAQ */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .faq-item {
+            background: #111127;
+            border: 1px solid #1e1e3f;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .faq-item .faq-q {
+            padding: 14px 18px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #e0e0e0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item .faq-a {
+            padding: 0 18px 14px;
+            font-size: 13px;
+            color: #8888aa;
+            line-height: 1.7;
+        }
+
+        /* 底部CTA */
+        .footer-cta {
+            text-align: center;
+            padding: 50px 0 60px;
+            background: linear-gradient(180deg, #0a0a1a 0%, #0d0d2b 100%);
+        }
+        .footer-cta h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .footer-cta p {
+            font-size: 14px;
+            color: #666688;
+            margin-bottom: 28px;
+        }
+        .footer-cta .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #7c3aed, #5b21b6);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 14px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .footer-cta .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(124, 58, 237, 0.5);
+        }
+        .footer-cta .contact-info {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #444466;
+        }
+
+        /* 风险提示 */
+        .risk-notice {
+            text-align: center;
+            padding: 16px 0 30px;
+            font-size: 11px;
+            color: #333344;
+        }
+
+        /* Form Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .modal-overlay.show { display: flex; }
+        .modal {
+            background: #111127;
+            border: 1px solid #2a2a4a;
+            border-radius: 20px;
+            padding: 32px 28px;
+            width: 100%;
+            max-width: 420px;
+            position: relative;
+        }
+        .modal .close-btn {
+            position: absolute;
+            top: 14px; right: 14px;
+            background: none;
+            border: none;
+            color: #444;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .modal h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        .modal .modal-sub {
+            font-size: 13px;
+            color: #666688;
+            margin-bottom: 24px;
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            color: #8888aa;
+            margin-bottom: 6px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            background: #0a0a1a;
+            border: 1px solid #2a2a4a;
+            border-radius: 10px;
+            padding: 12px 14px;
+            font-size: 14px;
+            color: #e0e0e0;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #7c3aed;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .form-group select option {
+            background: #0a0a1a;
+        }
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #7c3aed, #5b21b6);
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 14px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: transform 0.2s;
+        }
+        .submit-btn:hover {
+            transform: translateY(-1px);
+        }
+        .form-note {
+            font-size: 11px;
+            color: #444466;
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        /* Success state */
+        .success-state {
+            display: none;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .success-state.show { display: block; }
+        .success-state .ok-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        .success-state h4 {
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .success-state p {
+            font-size: 13px;
+            color: #8888aa;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .section { animation: fadeInUp 0.6s ease both; }
+        .section:nth-child(2) { animation-delay: 0.1s; }
+        .section:nth-child(3) { animation-delay: 0.2s; }
+        .section:nth-child(4) { animation-delay: 0.3s; }
+        .section:nth-child(5) { animation-delay: 0.4s; }
+        .section:nth-child(6) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <div class="badge">🔥 2026 创业新风口</div>
+        <h1>弹幕游戏<br><span>无人直播</span>招商合作</h1>
+        <p class="subtitle">0露脸 · 0口播 · 电脑挂机 · 全自动赚钱</p>
+
+        <div class="highlight-box">
+            <div class="number">1-2万</div>
+            <div class="label">全部启动资金 · 设备要求低 · 小白也能做</div>
+        </div>
+
+        <button class="cta-btn" onclick="openModal()">立即咨询合作</button>
+        <p class="cta-note">✦ 名额有限，每天咨询较多，请速联系</p>
+    </div>
+</section>
+
+<!-- 什么是弹幕游戏 -->
+<section class="section">
+    <div class="container">
+        <div class="section-title"><span class="icon">🎮</span> 什么是弹幕游戏无人直播？</div>
+        <div class="intro-card">
+            <p><strong>弹幕游戏无人直播</strong>，是一种全新的直播玩法——</p>
+            <p>你不用出镜、不用说话、不用做任何表演。直播间里跑一个<strong>弹幕互动游戏</strong>，观众发弹幕参与游戏互动，平台自动推流、自动引流、自动转化，全程自动化运行。</p>
+            <p>你只需要：一台电脑 + 每天2-3小时 = <strong>每天稳定收益</strong></p>
+        </div>
+    </div>
+</section>
+
+<!-- 核心卖点 -->
+<section class="section">
+    <div class="container">
+        <div class="section-title"><span class="icon">✨</span> 为什么选择这个项目？</div>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="f-icon">🎤</div>
+                <div class="f-title">无需露脸</div>
+                <div class="f-desc">不用拍视频，保护隐私</div>
+            </div>
+            <div class="feature-item">
+                <div class="f-icon">🗣️</div>
+                <div class="f-title">无需说话</div>
+                <div class="f-desc">不用口播，彻底解放双手</div>
+            </div>
+            <div class="feature-item">
+                <div class="f-icon">⚡</div>
+                <div class="f-title">全自动运行</div>
+                <div class="f-desc">设置好后全程自动跑</div>
+            </div>
+            <div class="feature-item">
+                <div class="f-icon">💰</div>
+                <div class="f-title">低成本启动</div>
+                <div class="f-desc">1-2万搞定，无需囤货</div>
+            </div>
+            <div class="feature-item">
+                <div class="f-icon">📈</div>
+                <div class="f-title">收益可观</div>
+                <div class="f-desc">合伙人日收益300-1000+</div>
+            </div>
+            <div class="feature-item">
+                <div class="f-icon">🎯</div>
+                <div class="f-title">手把手带</div>
+                <div class="f-desc">全套教程+社群+1对1指导</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 目标人群 -->
+<section class="section">
+    <div class="container">
+        <div class="section-title"><span class="icon">👥</span> 适合谁来合作？</div>
+        <ul class="crowd-list">
+            <li><span class="check">✓</span> 想做副业增收的在职人员（朝九晚五，下班后开播）</li>
+            <li><span class="check">✓</span> 想做自媒体但不愿出镜的自由职业者</li>
+            <li><span class="check">✓</span> 有电脑、有空闲时间的创业者、小白</li>
+            <li><span class="check">✓</span> 有闲散时间想增加收入的全职宝爸宝妈</li>
+            <li><span class="check">✓</span> 想低成本试水直播行业的初次创业者</li>
+            <li><span class="check">✓</span> 有一定资金（1-2万），寻找靠谱项目的投资人</li>
+        </ul>
+    </div>
+</section>
+
+<!-- 收益参考 -->
+<section class="section">
+    <div class="container">
+        <div class="section-title"><span class="icon">💎</span> 收益参考</div>
+        <div class="profit-section">
+            <div class="profit-title">合伙人日收益区间</div>
+            <div class="profit-sub">根据项目成熟合伙人数据统计（仅供参考）</div>
+            <div class="profit-range">
+                <span class="num">300</span>
+                <span class="unit">元</span>
+                <span class="divider">~</span>
+                <span class="num">1000+</span>
+                <span class="unit">元/天</span>
+            </div>
+            <div class="profit-note">* 收益因执行力、投入时间、运营能力等因素存在差异，过往收益不代表未来承诺</div>
+            <div class="profit-tags">
+                <span class="profit-tag">设备要求低</span>
+                <span class="profit-tag">无需囤货</span>
+                <span class="profit-tag">不用管人</span>
+                <span class="profit-tag">可做副业</span>
+                <span class="profit-tag">可全职做</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 合伙人等级 -->
+<section class="section">
+    <div class="container">
+        <div class="section-title"><span class="icon">🤝</span> 合伙人等级</div>
+        <div class="plans">
+            <div class="plan-card">
+                <div class="plan-name">基础合伙人</div>
+                <div class="plan-price">1万 <span>元起</span></div>
+                <ul class="plan-features">
+                    <li>全套设备搭建教程</li>
+                    <li>弹幕游戏直播全套教程</li>
+                    <li>社群支持</li>
+                    <li>引流方法资料</li>
+                </ul>
+            </div>
+            <div class="plan-card popular">
+                <div class="plan-name">高级合伙人</div>
+                <div class="plan-price">2万 <span>元</span></div>
+                <ul class="plan-features">
+                    <li>基础合伙人全部权益</li>
+                    <li>1对1全程指导</li>
+                    <li>优先项目货源渠道</li>
+                    <li>合伙人内部资源共享</li>
+                    <li>分润机制（高阶）</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+    <div class="container">
+        <div class="section-title"><span class="icon">❓</span> 常见问题</div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-q">真的不用管吗？ <span>+</span></div>
+                <div class="faq-a">开播前需要简单设置一下，设置好后全程自动运行。你可以正常做自己的事。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">不会玩直播能学会吗？ <span>+</span></div>
+                <div class="faq-a">全程有教程，手把手带，1-2天就能上手。高级合伙人还有1对1指导。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">1-2万能回本吗？ <span>+</span></div>
+                <div class="faq-a">大多数人第一个月就开始有收益，快的第一周就有正向回报。具体因人而异。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">会不会被封号？ <span>+</span></div>
+                <div class="faq-a">我们用的是正规平台规则内的玩法，会教你怎么规避风险，稳定运营。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">需要什么设备？ <span>+</span></div>
+                <div class="faq-a">一台普通电脑+网络即可，设备要求低，不需要专业设备。</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 底部CTA -->
+<section class="footer-cta">
+    <div class="container">
+        <h2>想了解更多？立即联系我们</h2>
+        <p>留下你的联系方式，我们的人会第一时间联系你</p>
+        <button class="cta-btn" onclick="openModal()">填写合作表单</button>
+        <p class="contact-info">我们提供免费咨询 · 不收费 · 无骚扰</p>
+    </div>
+</section>
+
+<div class="risk-notice container">
+    ⚠️ 投资有风险，入市需谨慎。项目收益受市场、个人执行力等多因素影响，本页面所有收益数据仅供参考，不构成投资承诺。
+</div>
+
+<!-- 表单弹窗 -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+        <button class="close-btn" onclick="closeModal()">×</button>
+        <div id="formState">
+            <h3>📩 合作咨询表单</h3>
+            <p class="modal-sub">填写以下信息，我们的人会在24小时内联系你</p>
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label>你的称呼（昵称即可）</label>
+                    <input type="text" name="name" placeholder="请输入称呼" required>
+                </div>
+                <div class="form-group">
+                    <label>手机号 / 微信号</label>
+                    <input type="text" name="contact" placeholder="请输入联系方式" required>
+                </div>
+                <div class="form-group">
+                    <label>年龄范围</label>
+                    <select name="age" required>
+                        <option value="">请选择</option>
+                        <option value="22以下">22岁以下</option>
+                        <option value="22-30">22-30岁</option>
+                        <option value="31-40">31-40岁</option>
+                        <option value="41-45">41-45岁</option>
+                        <option value="45以上">45岁以上</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>预算范围</label>
+                    <select name="budget" required>
+                        <option value="">请选择</option>
+                        <option value="1万以下">1万以下</option>
+                        <option value="1-2万">1-2万</option>
+                        <option value="2-5万">2-5万</option>
+                        <option value="5万以上">5万以上</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>目前状态（选填）</label>
+                    <textarea name="note" placeholder="比如：在职想副业 / 想创业 / 想了解项目 等"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">提交咨询</button>
+                <p class="form-note">🔒 你的信息仅用于联系，不会泄露给第三方</p>
+            </form>
+        </div>
+        <div class="success-state" id="successState">
+            <div class="ok-icon">✅</div>
+            <h4>提交成功！</h4>
+            <p>我们已收到你的信息<br>会在24小时内联系你，请耐心等待~</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openModal() {
+        document.getElementById('modalOverlay').classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+        document.getElementById('modalOverlay').classList.remove('show');
+        document.body.style.overflow = '';
+    }
+    document.getElementById('modalOverlay').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-q').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var a = this.nextElementSibling;
+            var isOpen = a.style.display === 'block';
+            document.querySelectorAll('.faq-a').forEach(function(item) {
+                item.style.display = '';
+                item.parentElement.querySelector('.faq-q span').textContent = '+';
+            });
+            if (!isOpen) {
+                a.style.display = 'block';
+                this.querySelector('span').textContent = '−';
+            }
+        });
+    });
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        var form = document.getElementById('contactForm');
+        var data = new FormData(form);
+        var obj = {};
+        data.forEach(function(v, k) { obj[k] = v; });
+
+        // 发送到 ServerChan
+        var SENDKEY = 'SCT332393TeLnv1Q8aElrA7TFtjVDL0Qok';
+        var title = '📩 新招商咨询 - ' + obj.name;
+        var desp = [
+            '称呼：' + obj.name,
+            '联系方式：' + obj.contact,
+            '年龄范围：' + obj.age,
+            '预算：' + obj.budget,
+            obj.note ? '备注：' + obj.note : ''
+        ].join('\n');
+
+        fetch('https://sctapi.ftqq.com/' + SENDKEY + '.send', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ title: title, desp: desp })
+        }).then(function(res) {
+            console.log('ServerChan 推送结果:', res);
+        }).catch(function(err) {
+            console.error('推送失败:', err);
+        });
+
+        document.getElementById('formState').style.display = 'none';
+        document.getElementById('successState').classList.add('show');
+        setTimeout(closeModal, 3000);
+    }
+</script>
+
+</body>
+</html>
